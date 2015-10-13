@@ -12,8 +12,11 @@ https://docs.djangoproject.com/en/1.8/ref/settings/
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 import os
+from os.path import dirname, abspath, join
 
-BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+BASE_DIR = dirname(dirname(abspath(__file__)))
+MAIN_DIR = abspath(join(dirname(__file__), '..', 'edmap'))
+TEMP_DIR = join(MAIN_DIR, 'templates')
 
 
 # Quick-start development settings - unsuitable for production
@@ -55,7 +58,7 @@ ROOT_URLCONF = 'edmap.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [TEMP_DIR],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -100,3 +103,8 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/1.8/howto/static-files/
 
 STATIC_URL = '/static/'
+STATIC_ROOT = 'staticfiles'
+
+STATICFILES_DIRS = (
+    os.path.join(MAIN_DIR, 'static'),
+)
