@@ -18,4 +18,7 @@ from django.contrib import admin
 
 urlpatterns = patterns('',
     url(r'^$', 'edmap.handler.home'),
+    url(r'^about$', 'edmap.handler.about'),
+    url(r'^all$', 'edmap.handler.all'),
+    url(r'^genre', include('edmap.genre.urls')),
 )

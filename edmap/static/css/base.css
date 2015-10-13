@@ -2,6 +2,7 @@ html {
     padding: 0;
     margin: 0;
     font-family: "Georgia";
+    font-size: 14pt;
 }
 
 body {
@@ -10,7 +11,7 @@ body {
 
 #header {
     height: 50px;
-    background-color: darkorange;
+    background-color: darkslategrey;
 }
 
 #logo {
@@ -52,7 +53,8 @@ body {
     height: 100%;
     width: 70px;
     text-align: center;
-    background-color: orange;
+    color: #f7f7f7;
+    background-color: #f47606;
 }
 
 .hl_itema {
@@ -85,6 +87,10 @@ body {
     /*bottom: 0;*/
 /*}*/
 
+.title{
+    background-color: #f47606;
+    color: #f7f7f7;
+}
 
 .page_sect {
     color: black;
@@ -107,5 +113,5 @@ body {
 
 .c1 {
     padding: 40px;
-    height: 500px;
+    height: 420px;
 }
