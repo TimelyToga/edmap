@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>EDMap: History of EDM</title>
+
+    <link href="static/css/base.css" rel="stylesheet"/>
+    {% block header %}
+    {% endblock header %}
+
+    {% block scripts %}
+    {% endblock scripts %}
+</head>
+<body>
+    <div id="header">
+        <img id="logo" src="/static/img/edmap_logo_wh_md.png">
+        <div class="hl_wp">
+            <ul class="hl">
+                <li class="hl_item">
+                        <a class="hl_itema" href="/">Item 1</a>
+                </li>
+                <li class="hl_item">
+                    <a class="hl_itema" href="/">Item 2</a>
+                </li>
+                <li class="hl_item">
+                    <a class="hl_itema" href="/">Item 3</a>
+                </li>
+                <li class="hl_item">
+                    <a class="hl_itema" href="/">Item 4</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+   {% block content %}
+   {% endblock content %}
+</body>
+</html>
