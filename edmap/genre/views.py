@@ -1,5 +1,6 @@
 from django.shortcuts import render
 from forms import GenreForm
+from models import Genre
 from django.http import HttpResponseRedirect
 from django.core.context_processors import csrf
 
@@ -21,4 +22,13 @@ def create(request):
     return render(request, 'create_genre.html', args)
 
 def view_genre(request, genre_name):
-    return render(request, 'view_genre.html', {'genre_name': genre_name})
+    try:
+        genre = Genre.objects.get(key=genre_name)
+    except Exception:
+        return render(request, 'view_genre.html', {'genre': {"name": "NOT FOUND"}})
+
+    return render(request, 'view_genre.html', {'genre': genre})
+
+
+def all(request):
+    return render(request, 'all.html', {'genres': Genre.objects.all()})

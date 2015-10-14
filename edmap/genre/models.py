@@ -9,7 +9,8 @@ class Genre(models.Model):
     def __str__(self):
         return self.name
 
-    key = models.CharField(primary_key=True, max_length=256)
+    key= models.IntegerField(primary_key=True, auto_created=True)
+    # key = models.CharField(primary_key=True, auto_created=True, max_length=256, unique=True)
     created = DateTimeField(auto_now=True)
     name = CharField(max_length=256, unique=True)
     description = CharField(max_length=512)
@@ -33,11 +34,11 @@ class Influencer(models.Model):
     #### Rock --> Pop
 
     class Meta:
-        ordering = ('created',)
+        ordering = ('influencer',)
 
     def __str__(self):
         return self.url
 
     key = models.CharField(primary_key=True, auto_created=True, max_length=256)
-    influencer = ForeignKey(Genre)
+    influencer = ForeignKey(Genre, related_name='+')
     influencee = ForeignKey(Genre)
