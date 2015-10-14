@@ -13,6 +13,7 @@ Including another URLconf
     1. Add an import:  from blog import urls as blog_urls
     2. Add a URL to urlpatterns:  url(r'^blog/', include(blog_urls))
 """
+from django.contrib.staticfiles.urls import staticfiles_urlpatterns
 from django.conf.urls import include, url, patterns
 from django.contrib import admin
 
@@ -22,3 +23,5 @@ urlpatterns = patterns('',
     url(r'^all$', 'edmap.handler.all'),
     url(r'^genre', include('edmap.genre.urls')),
 )
+
+urlpatterns += staticfiles_urlpatterns()
