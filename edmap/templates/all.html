@@ -9,13 +9,19 @@
 
 {% block content %}
     <div class="title">
-        <h1>List of All Content</h1>
+        <h1>List of All Genres</h1>
     </div>
 
     <div class="page_sect ps_one">
         <div class="col_wrapper">
             <div class="c1">
-                Information about us.
+                <ul>
+                {% for genre in genres %}
+                    <li>
+                        <a href="/genre/view/{{ genre.key }}">{{ genre }}</a>
+                    </li>
+                {% endfor %}
+                </ul>
             </div>
         </div>
     </div>
