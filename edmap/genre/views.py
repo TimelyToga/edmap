@@ -29,6 +29,14 @@ def view_genre(request, genre_name):
 
     return render(request, 'view_genre.html', {'genre': genre})
 
+def delete_genre(request, genre_key):
+    try:
+        Genre.objects.filter(key=genre_key).delete()
+    except Exception:
+        return render(request, 'all.html', {'genres': Genre.objects.all()})
+
+    return render(request, 'all.html', {'genres': Genre.objects.all()})
+
 
 def all(request):
     return render(request, 'all.html', {'genres': Genre.objects.all()})
