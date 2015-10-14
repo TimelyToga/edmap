@@ -15,7 +15,15 @@
     <div class="page_sect ps_one">
         <div class="col_wrapper">
             <div class="c1">
-                Information about us.
+
+                <form action="/genre/create" method="post">{% csrf_token %}
+                <ul class="form_ul" style="list-style-type: none;">
+                    {{ form.as_ul }}
+                </ul>
+
+                <input id="submit_button" type="submit" name="submit" value="Create Genre">
+                </form>
+
             </div>
         </div>
     </div>

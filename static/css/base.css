@@ -132,3 +132,12 @@ body {
     padding: 40px;
     height: 420px;
 }
+
+.form_ul li {
+    margin: 20px;
+}
+
+#submit_button {
+    height: 100px;
+    width: 200px;
+}
