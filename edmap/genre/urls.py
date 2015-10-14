@@ -3,4 +3,5 @@ from django.contrib import admin
 
 urlpatterns = patterns('edmap.genre.views',
     url(r'^/create$', 'create'),
+    url(r'^/view/(?P<genre_name>.*)$', 'view_genre'),
 )
