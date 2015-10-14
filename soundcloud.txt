@@ -1,0 +1,4 @@
+Soundcloud Info
+
+Client ID: 	   	4e13081ee9020b565401209b115c43d0
+Client Secret: 	88635d44797dbe416023b881a5cea910
