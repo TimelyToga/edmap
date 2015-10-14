@@ -16,10 +16,18 @@
         <div class="col_wrapper">
             <div class="c1">
                 <table>
+                    <tr class="table_legend">
+                        <td>Genre</td>
+                        <td>Description</td>
+                        <td>Delete</td>
+                    </tr>
                 {% for genre in genres %}
                     <tr>
                         <td>
                             <a href="/genre/view/{{ genre.key }}">{{ genre }}</a>
+                        </td>
+                        <td>
+                            {{ genre.description }}
                         </td>
                         <td>
                             <a class="delete" style="float: right;" href="/genre/delete/{{ genre.key }}">X</a>
